@@ -2,7 +2,6 @@ from flask import Flask, request, render_template, send_from_directory
 from flask_cors import CORS, cross_origin
 from flask_mail import Mail, Message
 from decouple import config
-import os  # Import the os module
 
 app = Flask(__name__, static_folder='./build')
 CORS(app)
