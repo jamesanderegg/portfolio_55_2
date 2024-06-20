@@ -1,0 +1,114 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.App {
+  margin-left: 0%;
+}
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 16px;
+  z-index: 100;
+}
+nav .up {
+  font: bold 14px/1 sans-serif;
+  color: white;
+  width: 92px;
+  padding: 8px;
+  background-color: rgba(230, 26, 60, 0.8);
+  float: left;
+  cursor: pointer;
+}
+nav .up:hover {
+  background-color: rgba(184, 20, 48, 0.8);
+}
+
+.feature {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.node {
+  position: absolute;
+  background: transparent no-repeat 50%/cover; /* Removed url("") */
+  overflow: hidden;
+  opacity: 1.0;
+  transition: opacity 0.8s;
+  cursor: pointer;
+}
+.node .label {
+  display: inline;
+  font-family: sans-serif;
+  color: rgba(58, 56, 56, 0.6);
+  position: absolute;
+  padding: 1;
+  margin: 0;
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  transition: color 0.4s, opacity 0.8s, -webkit-filter 0.8s;
+  transition: color 0.4s, opacity 0.8s, filter 0.8s;
+  transition: color 0.4s, opacity 0.8s, filter 0.8s, -webkit-filter 0.8s;
+}
+.node .text {
+  display: inline;
+  font-family: sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  font-size: 40%;
+  padding: 1;
+  text-indent: 1em;
+  margin: 0;
+  top: 65%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  transition: color 0.4s, opacity 0.8s, -webkit-filter 0.8s;
+  transition: color 0.4s, opacity 0.8s, filter 0.8s;
+  transition: color 0.4s, opacity 0.8s, filter 0.8s, -webkit-filter 0.8s;
+}
+.node.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+.node.hide .label {
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+}
+.node:hover .label {
+  color: rgb(124, 34, 34);
+}
+.node:hover .text {
+  color: rgb(124, 73, 73);
+}
+.node.level-0 {
+  z-index: 4;
+  font-size: 8vmin;
+  display: none;
+}
+.node.level-1 {
+  z-index: 3;
+  font-size: 6vmin;
+}
+.node.level-2 {
+  z-index: 2;
+  font-size: 5vmin;
+}
+.node.level-3 {
+  z-index: 1;
+  font-size: 2.5vmin;
+}

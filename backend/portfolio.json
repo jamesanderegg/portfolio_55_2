@@ -1,0 +1,56 @@
+{
+  "name": "Portfolio",
+  "children": [
+    {
+      "name": "Home",
+      "children": [
+        {
+          "name": "Projects",
+          "children": [
+            {
+              "name": "Project 1",
+              "category": "Data Science",
+              "description": "Description of project 1",
+              "image": "image_url",
+              "link": "project_url"
+            }
+          ]
+        },
+        {
+          "name": "Paintings",
+          "children": [
+            {
+              "name": "Painting 1",
+              "artist": "Artist 1",
+              "description": "Description of painting 1",
+              "image": "image_url",
+              "link": "painting_url"
+            }
+          ]
+        },
+        {
+          "name": "Blog",
+          "children": [
+            {
+              "name": "Blog Post 1",
+              "author": "Your Name",
+              "title": "Title of blog post 1",
+              "description": "Description of blog post 1",
+              "link": "blog_post_url"
+            }
+          ]
+        },
+        {
+          "name": "About Me",
+          "children": [
+            {
+              "name": "Bio",
+              "description": "Description of yourself",
+              "image": "image_url"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

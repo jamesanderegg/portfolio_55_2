@@ -1,0 +1,69 @@
+# Node (React) related
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Flask related
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+instance/
+.webassets-cache
+
+# Environment related
+.env
+*.env
+*.env.*
+.venv/
+venv/
+ENV/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+*.sublime*
+*.iml
+
+# OS related
+.DS_Store
+Thumbs.db
+
+# Large files
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.flv
+*.zip
+*.tar.gz
+*.rar
+*.pack
+
+# Database
+*.sqlite
+
+# Others
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Build/dist directories
+/dist
+/build
+
+frontend/node_modules/
+frontend/public/images/369076Tutorial.pdf
+backend/build/images/369076Tutorial.pdf
+.cache/

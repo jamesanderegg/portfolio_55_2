@@ -1,0 +1,84 @@
+
+
+.container {
+  text-align: center;
+  display: grid;
+  border: 1px solid red;
+  height: 100vh;
+  align-items: center;
+  grid-template-rows: repeat(5, 1fr); 
+}
+
+
+rect {
+  transition: fill 0.3s;
+}
+
+h1 {
+
+  font-size: 48px;
+  color: #000000;
+}
+
+h1 .text {
+  padding: 0;
+  padding-right: 4px;
+  border-right: 2px solid #747474;
+  animation: blink 0.75s infinite;
+}
+
+h1 .blue {
+  color: #4168bb;
+}
+
+h1 .green {
+  color: #005503;
+}
+
+h1 .yellow {
+  color: #8f7221;
+}
+
+h1 .red {
+  color: #8e302a;
+}
+
+h1 .purple {
+  color: #7851A9; /* A regal purple, often associated with royalty */
+}
+
+h1 .gold {
+  color: #FFD700; /* A bright gold color that signifies wealth and prestige */
+}
+
+h1 .royalblue {
+  color: #4169E1; /* A deep blue color often linked with royal heritage */
+}
+
+h1 .crimson {
+  color: #DC143C; /* A rich, deep red that is both regal and commanding */
+}
+@keyframes blink {
+  from {
+    border: none;
+  }
+  to {
+    border-color: 2px solid #747474;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  h1 {
+    font-size: 40px;
+  }
+  img {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 32px;
+  }
+}

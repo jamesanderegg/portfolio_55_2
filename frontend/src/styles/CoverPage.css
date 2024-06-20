@@ -1,0 +1,14 @@
+.down {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #2196F3;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .down:hover {
+    background-color: #0b7dda;
+  }
