@@ -25,7 +25,7 @@ function CoverPage() {
       
     // </div>
     <>
-    <h1 style={'float: left'}>hello worldS</h1>
+    <h1 >hello world</h1>
       <Scene />
       </>
   );
