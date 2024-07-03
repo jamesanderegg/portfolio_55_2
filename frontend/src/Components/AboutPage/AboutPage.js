@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Skills from "../Skills/Skills";
+import Infographic from '../Infographic/Infographic';
 // import RandoBarChart from "../RandoBarChart";
 
 const GridWrapper = styled.div`
@@ -48,22 +49,26 @@ const Container = styled.div`
 `
 export default function AboutPage() {
   return (
-    <Container >
-      {/* <GridWrapper>
-        <Picture  src='/images/profile.png'/>
-
-        <Text>
-          I am a software developer working as a freelance Data Scientist and
-          Web Developer, doing business as, DataFluent. Born to think outside the
-          box, attentive to detail and eager to learn. Always exploring new
-          talents and challenging myself. Team orientated and lover of all
-          people. Born and raised in Golden, Colorado.
-        </Text>
-      </GridWrapper> */}
+    // <Container >
+    //   {/* <GridWrapper>
+    //     <Picture  src='/images/profile.png'/>
         
-        <FooterText>
-          <Skills />
-        </FooterText>
-    </Container>
+    //     <Text>
+    //     I am a software developer working as a freelance Data Scientist and
+    //     Web Developer, doing business as, DataFluent. Born to think outside the
+    //     box, attentive to detail and eager to learn. Always exploring new
+    //     talents and challenging myself. Team orientated and lover of all
+    //     people. Born and raised in Golden, Colorado.
+    //     </Text>
+    //     </GridWrapper> */}
+        
+    //     <FooterText>
+    //       {/* <Skills /> */}
+    //       <Infographic />
+    //       </FooterText>
+    // </Container>
+    <>
+    <Infographic />
+    </>
   );
 }

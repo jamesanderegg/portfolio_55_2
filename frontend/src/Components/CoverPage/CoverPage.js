@@ -5,28 +5,35 @@ import Scene from '../TreeShadows/Scene'
 // import Scene from "../Lamp.js/Scene";
 // import SphereGrid from '../Sphere/SphereGrid'
 // import GridGame from './GridGame';
-// import Sentence from '../Sentence/Sentence'
+import Sentence from '../Sentence/Sentence'
 // import Scene from "../Lamp/Scene";
-
+// import Infographic from "../Infographic/Infographic";
+// import TrackScene from "../Track/TrackScene";
 
 function CoverPage() {
   // const colors = ["purple", "gold", "royalblue", "crimson"];
-
+  const sentences = [
+    "hello world",
+    "welcome to my portfolio",
+    "please click anywhere to enter"
+  ];
   return (
-    // <div className="container">
-    //   {/* <Sentence
-    //     sentences={["Welcome.", "full stack portfolio", "art gallery", "data viz"]}
-    //     color="green"
-    //     startDelay={500}
-    //     typingSpeed={100}
-    //     maxFontSize={80}
-    //     minFontSize={80}
-    //   /> */}
-      
-    // </div>
+  
     <>
-    <h1 >hello world</h1>
+      <div className="sentence">
+      <Sentence
+        sentences={sentences}
+        color="green"
+        startDelay={500}
+        typingSpeed={100}
+        maxFontSize={15}
+        minFontSize={20}
+      />
+      
+    </div>
+    {/* <Infographic /> */}
       <Scene />
+      {/* <TrackScene /> */}
       </>
   );
 }

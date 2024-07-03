@@ -2,7 +2,7 @@ import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useSpring, a } from '@react-spring/three';
 import Plane from './Plane'
-import { Physics } from '@react-three/cannon';
+import { Physics } from '@react-three/rapier';
 
 
 

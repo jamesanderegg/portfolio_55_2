@@ -27,19 +27,33 @@ function Lights() {
 
   return (
     <>
-      <pointLight
+      {/* <pointLight
         castShadow
-        intensity={0.09}
+        intensity={.01}
         args={["#d31b1b", 0, 30]}
         position={[lightX, lightY, lightZ]}
       />
       <spotLight
         castShadow
-        intensity={1}
-        args={["#a49963", 30, 100]}
+        intensity={10}
+        args={["#a49963", 5, 400]}
         position={[lightX, lightY, lightZ]}
         penumbra={0.3}
         angle={Math.PI / 3}
+      /> */}
+      {/* Directional Light (Sun) */}
+      <directionalLight
+        castShadow
+        intensity={.2}
+        color="#fff9db"
+        position={[55, 55, 100]}  
+        shadow-mapSize-width={350}
+        shadow-mapSize-height={350}
+        shadow-camera-far={500}
+        shadow-camera-left={-180}
+        shadow-camera-right={180}
+        shadow-camera-top={100}
+        shadow-camera-bottom={-100}
       />
     </>
   );

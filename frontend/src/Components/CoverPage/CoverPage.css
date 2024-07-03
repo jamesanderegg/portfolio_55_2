@@ -1,14 +1,22 @@
 
-
+.sentence{
+  height: 60px;
+  margin: 0 0 0 150px;
+}
 .container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   text-align: center;
-  display: grid;
+  margin: auto;
   border: 1px solid red;
   height: 100vh;
-  align-items: center;
-  grid-template-rows: repeat(5, 1fr); 
 }
-
+.centered-div {
+  height: 40px; 
+  line-height: 40px; 
+  
+}
 
 rect {
   transition: fill 0.3s;
@@ -74,6 +82,15 @@ h1 .crimson {
   img {
     width: 75px;
     height: 75px;
+  }
+  .sentence{
+    height: 50px;
+    margin: 0 0 0 120px;
+  }
+  .centered-div {
+    height: 40px; 
+    line-height: 60px; 
+    
   }
 }
 

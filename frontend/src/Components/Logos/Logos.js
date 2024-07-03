@@ -9,8 +9,7 @@ const LogoContainer = styled.div`
   grid-template-rows: 0.6fr 0.4fr;
   text-align: center;
   @media (max-width: 580px) {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    display: none;
   }
 `;
 const LogoItem = styled.div`

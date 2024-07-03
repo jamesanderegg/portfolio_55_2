@@ -1,0 +1,147 @@
+{
+  "asset": {
+    "generator": "Khronos glTF Blender I/O v4.0.44",
+    "version": "2.0"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0,
+        2
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "track.small.001",
+      "translation": [
+        -0.78704833984375,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Bone",
+      "rotation": [
+        -1.0485808132898455e-7,
+        -1.0444720999203128e-7,
+        -0.7083190083503723,
+        0.7058925032615662
+      ],
+      "scale": [
+        1,
+        0.9999999403953552,
+        0.9999999403953552
+      ],
+      "translation": [
+        -0.4020043909549713,
+        0,
+        0
+      ]
+    },
+    {
+      "children": [
+        1
+      ],
+      "name": "Armature",
+      "translation": [
+        0.36871373653411865,
+        -0.7312796115875244,
+        -0.8192322254180908
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "marble ff.stl.002",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1
+          },
+          "indices": 2
+        }
+      ]
+    }
+  ],
+  "skins": [
+    {
+      "inverseBindMatrices": 3,
+      "joints": [
+        1
+      ],
+      "name": "Armature"
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 19874,
+      "max": [
+        13.6826171875,
+        0.9210460186004639,
+        18.976850509643555
+      ],
+      "min": [
+        -1.1612548828125,
+        -2.4427883625030518,
+        -19.02314567565918
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 19874,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5123,
+      "count": 30534,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 1,
+      "type": "MAT4"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 238488,
+      "byteOffset": 0,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 238488,
+      "byteOffset": 238488,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 61068,
+      "byteOffset": 476976,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 64,
+      "byteOffset": 538044
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "smalltracks_back_data.bin",
+      "byteLength": 538108
+    }
+  ]
+}

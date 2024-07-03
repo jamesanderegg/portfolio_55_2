@@ -52,7 +52,7 @@ function Sentence({ sentences, color, startDelay, typingSpeed, maxFontSize, minF
   };
 
   return (
-    <div>
+    <div className="centered-div">
       {displayedText.split('').map((char, index) => (
         <span key={index} style={{
           fontSize: `${calculateWaveSize(index, displayedText.length)}px`,
