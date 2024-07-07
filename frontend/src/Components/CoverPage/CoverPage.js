@@ -31,8 +31,8 @@ function CoverPage() {
       />
       
     </div>
-    <Infographic />
-      {/* <Scene /> */}
+    {/* <Infographic /> */}
+      <Scene />
       {/* <TrackScene /> */}
       </>
   );

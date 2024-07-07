@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Skills from "../Skills/Skills";
-import Infographic from '../Infographic/Infographic';
-import { GLTFModelProvider } from "../Infographic/GLTFModelProvider";
+import Infographic from '../Infographic1/Infographic';
+
 // import RandoBarChart from "../RandoBarChart";
 
 const GridWrapper = styled.div`
@@ -50,17 +50,17 @@ const Container = styled.div`
 `
 export default function AboutPage() {
   return (
-    <Container >
+    // <Container >
       
         
-        <FooterText>
-          <Skills />
+    //     <FooterText>
+    //       <Skills />
           
-          </FooterText>
-    </Container>
+    //       </FooterText>
+    // </Container>
     // <>
     // <GLTFModelProvider>
-    // <Infographic />
+    <Infographic />
     // </GLTFModelProvider>
     // </>
   );
