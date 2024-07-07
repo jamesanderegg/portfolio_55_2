@@ -1,27 +1,28 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Physics } from '@react-three/rapier';
 import Camera from './Camera';
 import Lights from './Lights';
 import Plane from './Plane';
-import SmallTracks from './SmallTracks';
+import GearModel from './GearModel';
 import './Infographic.css';
-import TrackJoint from './TrackJoint';
-
+import Joints from './Joints';
 
 const Infographic = ({ cameraPosition = [0, 100, 60], cameraLookAt = [0, 0, 0] }) => {
-  const trackPositions = [
-  
-    [0, 30, 0],
+  const gearRefs = useRef([]);
+
+  const gearPositions = [
+    [8, 0, 10.698],
+    [0, 10, -20],
     // Add more positions as needed
   ];
 
-  const trackScale = [1, 1, 1];
+  const gearScale = [1, 1, 1];
 
   return (
     <div className="infographic">
       <Canvas 
-        camera={{ position: [0, 50, 30], fov: 90 }} 
+        camera={{ position: [0, 40, 0], fov: 50 }} 
         shadows 
         fog={{ color: 'grey', near: 10, far: 50 }}
       >
@@ -29,11 +30,16 @@ const Infographic = ({ cameraPosition = [0, 100, 60], cameraLookAt = [0, 0, 0] }
         <Camera position={cameraPosition} lookAt={cameraLookAt} />
         <Lights />
         <Physics>
-          {/* <Plane position={[0, -0.9, 0]} size={[400, 400]} />
-          {trackPositions.map((pos, index) => (
-            <SmallTracks key={index} position={pos} scale={trackScale} />
-          ))} */}
-          {/* <TrackJoint /> */}
+          <Plane />
+          {gearPositions.map((pos, index) => (
+            <GearModel 
+              key={`gear-${index}`} 
+              position={pos} 
+              scale={gearScale} 
+              ref={el => gearRefs.current[index] = el} 
+            />
+          ))}
+          {/* <Joints gearRefs={gearRefs} /> */}
         </Physics>
       </Canvas>
     </div>

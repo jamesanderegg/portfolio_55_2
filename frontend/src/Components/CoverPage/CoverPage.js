@@ -7,7 +7,7 @@ import Scene from '../TreeShadows/Scene'
 // import GridGame from './GridGame';
 import Sentence from '../Sentence/Sentence'
 // import Scene from "../Lamp/Scene";
-// import Infographic from "../Infographic/Infographic";
+import Infographic from "../Infographic1/Infographic";
 // import TrackScene from "../Track/TrackScene";
 
 function CoverPage() {
@@ -31,8 +31,8 @@ function CoverPage() {
       />
       
     </div>
-    {/* <Infographic /> */}
-      <Scene />
+    <Infographic />
+      {/* <Scene /> */}
       {/* <TrackScene /> */}
       </>
   );
