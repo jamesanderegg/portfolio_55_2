@@ -44,7 +44,7 @@ function Lights() {
       {/* Directional Light (Sun) */}
       <directionalLight
         castShadow
-        intensity={.2}
+        intensity={.3}
         color="#fff9db"
         position={[55, 55, 100]}  
         shadow-mapSize-width={350}

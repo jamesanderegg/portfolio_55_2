@@ -12,8 +12,11 @@ import BarChart from './BarChart';
 import Screen from './Screen';
 import Picture from './Picture';
 import './Infographic.css';
+import Dashboard from './Dashboard';
+import FullStack from './FullStack';
+import DataWrangling from './DataWrangling';
 
-const Infographic = ({ cameraPosition = [0, 0, 140], cameraLookAt = [0, 0, 0] }) => {
+const Infographic = ({ cameraPosition = [0, 8, 170], cameraLookAt = [0, -5, 0] }) => {
   const gear1Ref = useRef();
   const gear2Ref = useRef();
   const gear3Ref = useRef();
@@ -46,7 +49,7 @@ const Infographic = ({ cameraPosition = [0, 0, 140], cameraLookAt = [0, 0, 0] })
   return (
     <div className="infographic">
       <Canvas
-        camera={{ position: [0, 40, 0], fov: 50 }}
+        camera={{ position: [0, 0, 0], fov: 50 }}
         shadows
         fog={{ color: 'grey', near: 10, far: 50 }}
       >
@@ -54,36 +57,45 @@ const Infographic = ({ cameraPosition = [0, 0, 140], cameraLookAt = [0, 0, 0] })
         <Camera position={cameraPosition} lookAt={cameraLookAt} />
         <Lights />
         <Physics>
-          <Plane position={[0, -50, 0]} size={[500, 300]} />
-          <Text3D text="TOOLS & SKILLS" position={[0, 55, 0]} rotation={[0, 0, 0]} size={6.5} color="#b0b3b8" />
-          <Box position={[0, 18, 0]} scale={[50, 0.7, 12]} rotation={[0, 0, 0]} />
+        <Box position={[0, 23, 0]} scale={[50, 0.7, 12]} rotation={[0, 0, 0]} />
+        <Plane position={[0, 23, 0]} size={[500, 300]} rotation={[0, 0, 0]} />
+          
+          
+          <Text3D text="TOOLS & SKILLS" position={[0, 60, .01]} rotation={[0, 0, 0]} size={6.5} color="#b0b3b8" />
 
-          <GearModel ref={gear1Ref} position={[-15, 1, 2]} scale={[.5, .5, .5]} velocity={0} rotation={[Math.PI / 2, 0, 0]} collisionGroups={[GEAR1_GROUP, NONE_GROUP]} />
-          <GearModel ref={gear2Ref} position={[15, 1, 2]} scale={[.5, .5, .5]} velocity={0} rotation={[Math.PI / 2, 0.175, 0]} collisionGroups={[GEAR2_GROUP, NONE_GROUP]} />
-          <GearModelHat ref={gear3Ref} position={[6, -27, 2]} scale={[.5, .5, .5]} velocity={0} rotation={[Math.PI / 2, 0, 0]} collisionGroups={[GEAR3_GROUP, NONE_GROUP]} />
-          <GearModelHat ref={gear3Ref} position={[22, 37, 5]} scale={[0.25, 0.25, 0.25]} velocity={0} rotation={[Math.PI / 2, 0, 0]} collisionGroups={[GEAR3_GROUP, NONE_GROUP]} />
+          <GearModelHat ref={gear3Ref} position={[18, 47, 5]} scale={[0.25, 0.25, 0.25]} velocity={1} rotation={[Math.PI / 2, 0, 0]} collisionGroups={[GEAR3_GROUP, NONE_GROUP]} />
+          <GearModel ref={gear2Ref} position={[26, 39, 5]} scale={[.5, .5, .5]} velocity={-.5} rotation={[Math.PI / 2, 0.175, 0]} collisionGroups={[GEAR2_GROUP, NONE_GROUP]} />
+          <GearModelHat ref={gear3Ref} position={[26, 28.5, 1]} scale={[.5, .5, .5]} velocity={1} rotation={[Math.PI / 2, 0, 0]} collisionGroups={[GEAR3_GROUP, NONE_GROUP]} />
+          <GearModel ref={gear1Ref} position={[24, 18, 2]} scale={[.25, .25, .5]} velocity={-2} rotation={[Math.PI / 2, 0, 0]} collisionGroups={[GEAR1_GROUP, NONE_GROUP]} />
+          <GearModel ref={gear2Ref} position={[33, 10, 1]} scale={[.5, .5, .5]} velocity={1} rotation={[Math.PI / 2, 0.175, 0]} collisionGroups={[GEAR2_GROUP, NONE_GROUP]} />
+          <GearModel ref={gear2Ref} position={[20, -8, 1]} scale={[1, 1, 1]} velocity={-.5} rotation={[Math.PI / 2, 0.175, 0]} collisionGroups={[GEAR2_GROUP, NONE_GROUP]} />
+         
+          
           <Picture
-            position={[-32, 38, 0.01]}
+            position={[-32, 45, 0.1]}
             size={[18, 18]}
             rotation={[0, 0, 0]}
             filePath="/images/matplotlibLogo.png"
           />
           <Picture
-            position={[28, 42, 0.01]}
+            position={[-15, 38, 0.1]}
             size={[12, 12]}
             rotation={[0, 0, 0]}
             filePath="/images/python.png"
           />
           <Picture
-            position={[24, 20, 0.01]}
+            position={[0, 38, 0.1]}
             size={[10, 10]}
             rotation={[0, 0, 0]}
             filePath="/images/javaScript-logo.png"
           />
           <BarChart initialData={initialBarChartData} />
 
-          <Screen position={[-15, 20, 5]} scale={[.5, .5, .5]} velocity={0} rotation={[0, 0, 0]} />
-        </Physics>
+          
+          <FullStack position={[-5, 14, 2.5]} scale={[.8, .8, .5]} velocity={0} rotation={[0, 0, 0]} color={"silver"}/>
+          <Dashboard position={[-12, -55, 2.5]} scale={[.6, .6, .5]} velocity={0} rotation={[0, 0, 0]} /> 
+          <DataWrangling position={[-16, -22, 2.5]} scale={[.9, .9, .5]} velocity={0} rotation={[0, 0, 0]} />
+          </Physics>
       </Canvas>
     </div>
   );

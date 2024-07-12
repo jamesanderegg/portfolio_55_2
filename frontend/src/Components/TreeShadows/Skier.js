@@ -66,9 +66,9 @@ function Skier({ position, color }) {
       <spotLight
         ref={spotlightRef}
         args={["#a49963", 5, 300]}
-        intensity={300}
-        position={[0, 10, 0]}
-        angle={Math.PI / 7}
+        intensity={600}
+        position={[10, 0, 0]}
+        angle={Math.PI / 3}
         penumbra={0.5}
         castShadow
         shadow-mapSize-width={2048}

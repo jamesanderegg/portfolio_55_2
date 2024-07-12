@@ -74,7 +74,7 @@ export default function Scene() {
   }, []);
 
   return (
-    <Canvas camera={{ position: [0, 100, 0], fov: 90 }} shadows fog={{ color: '#06040d', near: 10, far: 50 }}>
+    <Canvas camera={{ position: [0, 90, 0], fov: 90 }} shadows fog={{ color: '#06040d', near: 10, far: 50 }}>
       <color attach="background" args={["#06040d"]} />
       <Camera />
       <Lights />

@@ -22,7 +22,7 @@ const BarChart = ({ initialData, updateInterval = 1800 }) => {
       {data.map((d, index) => (
         <Bar
           key={index}
-          position={[-10 + index * 1.2, 36, 2.2]}
+          position={[-10 + index * 1.2, 46, 2.2]}
           scale={[2, 1, 2]} // Initial height set to 1
           rotation={[0, 0, 0]}
           color={d.color}
