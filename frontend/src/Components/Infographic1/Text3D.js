@@ -1,8 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { useLoader, extend } from '@react-three/fiber';
+import { extend } from '@react-three/fiber';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
-import * as THREE from 'three';
 
 // Ensure TextGeometry is properly extended into THREE namespace
 extend({ TextGeometry });

@@ -1,40 +1,35 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import "./CoverPage.css";
-import { Canvas } from '@react-three/fiber';
-import Scene from '../TreeShadows/Scene'
-// import Scene from "../Lamp.js/Scene";
-// import SphereGrid from '../Sphere/SphereGrid'
-// import GridGame from './GridGame';
-import Sentence from '../Sentence/Sentence'
-// import Scene from "../Lamp/Scene";
-import Infographic from "../Infographic1/Infographic";
-// import TrackScene from "../Track/TrackScene";
+import Sentence from "../Sentence/Sentence";
 
 function CoverPage() {
-  // const colors = ["purple", "gold", "royalblue", "crimson"];
   const sentences = [
-    "hello world",
-    "welcome to my portfolio",
-    "please click anywhere to enter"
+    "data driven web applications",
+    "dashboards and reporting",
+    "point of sale systems",
+    "data automation",
+    "local AI solutions",
   ];
+
   return (
-  
-    <>
-      <div className="sentence">
-      <Sentence
-        sentences={sentences}
-        color="green"
-        startDelay={500}
-        typingSpeed={100}
-        maxFontSize={15}
-        minFontSize={20}
-      />
-      
+    <div
+      className="cover-page"
+      aria-label={`DataFluent services: ${sentences.join(", ")}`}
+    >
+      <div className="cover-page__sentence" aria-hidden="true">
+        <Sentence
+          sentences={sentences}
+          color="#E4BB41"
+          startDelay={500}
+          typingSpeed={90}
+          maxFontSize={20}
+          minFontSize={20}
+          exitOnComplete
+          holdDelay={900}
+          exitDuration={520}
+        />
+      </div>
     </div>
-    {/* <Infographic /> */}
-      <Scene />
-      {/* <TrackScene /> */}
-      </>
   );
 }
 

@@ -1,7 +1,5 @@
 import React from 'react';
 import { RigidBody } from '@react-three/rapier';
-import { useLoader } from '@react-three/fiber';
-import * as THREE from 'three';
 import Screen from './Screen';
 import Text3D from './Text3D';
 

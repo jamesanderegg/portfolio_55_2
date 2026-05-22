@@ -1,4 +1,80 @@
 
+.cover-page {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  pointer-events: none;
+}
+
+.cover-page-slot {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: clamp(10px, 1.6vw, 20px);
+}
+
+.cover-page__sentence {
+  width: min(100%, 680px);
+  min-width: 0;
+  min-height: clamp(96px, 14vmin, 140px);
+  color: #E4BB41;
+  font-weight: 800;
+  text-align: left;
+  text-shadow: 0 2px 16px rgba(37, 32, 33, 0.6);
+}
+
+.cover-page__sentence .centered-div {
+  height: auto;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.cover-page__sentence .sentence-sequence {
+  position: relative;
+  height: clamp(96px, 14vmin, 140px);
+  line-height: 1.1;
+}
+
+.sentence-sequence__line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  overflow: visible;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 670px) {
+  .cover-page {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
+  }
+
+  .cover-page__sentence {
+    width: 100%;
+    min-height: 120px;
+    text-align: center;
+  }
+
+  .cover-page__sentence .sentence-sequence {
+    height: 120px;
+  }
+
+  .cover-page__sentence .centered-div {
+    line-height: 1.1;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .cover-page__sentence .centered-div span {
+    font-size: 24px !important;
+  }
+}
+
 .sentence{
   height: 60px;
   margin: 0 0 0 150px;
@@ -97,5 +173,9 @@ h1 .crimson {
 @media screen and (max-width: 400px) {
   h1 {
     font-size: 32px;
+  }
+
+  .cover-page__sentence .centered-div span {
+    font-size: 22px !important;
   }
 }

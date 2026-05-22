@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useThree } from '@react-three/fiber';
 
 function Camera({ position = [0, 0, 60], lookAt = [0, 0, 0] }) {

@@ -9,7 +9,6 @@ import GearModelHat from '../Infographic/GearModelHat';
 import Text3D from './Text3D';
 import Box from './Box';
 import BarChart from './BarChart';
-import Screen from './Screen';
 import Picture from './Picture';
 import './Infographic.css';
 import Dashboard from './Dashboard';

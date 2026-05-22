@@ -62,6 +62,7 @@ Thumbs.db
 # Build/dist directories
 /dist
 /build
+frontend/build/
 
 frontend/node_modules/
 frontend/public/images/369076Tutorial.pdf

@@ -1,59 +1,41 @@
-import React, { useEffect, useState } from 'react';
-import { useThree } from '@react-three/fiber';
+import React, { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 
 function Lights() {
-  const { gl, camera } = useThree();
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const moonRef = useRef();
+  const orbitAngle = useRef(0);
+  const orbitRadius = 170;
+  const orbitHeight = 72;
 
-  useEffect(() => {
-    const handleMouseMove = (event) => {
-      // Convert screen coordinates to normalized device coordinates
-      const x = (event.clientX / window.innerWidth) * 2 - 1;
-      const y = -(event.clientY / window.innerHeight) * 2 + 1;
-      setMousePosition({ x, y });
-    };
-
-    gl.domElement.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      gl.domElement.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, [gl.domElement]);
-
-  // Convert normalized device coordinates to a range suitable for light positioning
-  const lightX = mousePosition.x * 50;
-  const lightY = 1; // You can adjust the Y position as needed
-  const lightZ = -mousePosition.y * 50;
+  useFrame((_, delta) => {
+    if (!moonRef.current) return;
+    orbitAngle.current += delta * 0.015;
+    moonRef.current.position.x = Math.cos(orbitAngle.current) * orbitRadius;
+    moonRef.current.position.z = Math.sin(orbitAngle.current) * orbitRadius;
+    moonRef.current.position.y = orbitHeight;
+    moonRef.current.target.position.set(0, 0, 0);
+    moonRef.current.target.updateMatrixWorld();
+  });
 
   return (
     <>
-      {/* <pointLight
-        castShadow
-        intensity={.01}
-        args={["#d31b1b", 0, 30]}
-        position={[lightX, lightY, lightZ]}
-      />
-      <spotLight
-        castShadow
-        intensity={10}
-        args={["#a49963", 5, 400]}
-        position={[lightX, lightY, lightZ]}
-        penumbra={0.3}
-        angle={Math.PI / 3}
-      /> */}
-      {/* Directional Light (Sun) */}
+      <ambientLight intensity={0.04} color="#5e6f9e" />
       <directionalLight
+        ref={moonRef}
         castShadow
-        intensity={.3}
-        color="#fff9db"
-        position={[55, 55, 100]}  
-        shadow-mapSize-width={350}
-        shadow-mapSize-height={350}
-        shadow-camera-far={500}
-        shadow-camera-left={-180}
-        shadow-camera-right={180}
-        shadow-camera-top={100}
-        shadow-camera-bottom={-100}
+        intensity={0.22}
+        color="#cfd7ee"
+        position={[orbitRadius, orbitHeight, 0]}
+        shadow-mapSize-width={2048}
+        shadow-mapSize-height={2048}
+        shadow-camera-near={1}
+        shadow-camera-far={600}
+        shadow-camera-left={-260}
+        shadow-camera-right={260}
+        shadow-camera-top={260}
+        shadow-camera-bottom={-260}
+        shadow-bias={-0.00015}
+        shadow-normalBias={0.025}
       />
     </>
   );

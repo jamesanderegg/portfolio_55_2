@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+# James Anderegg Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Interactive portfolio built with React, D3, Three.js, React Three Fiber, and a
+small Flask backend for serving the production build and handling contact forms.
 
-## Available Scripts
+The main navigation is a D3 treemap. Each rectangle is generated from
+`src/utilities/treedata.js`. Some rectangles zoom deeper into the tree. Other
+rectangles act as portal targets for React components such as the cover page,
+tools scene, night ski project, blog, and art gallery.
 
-In the project directory, you can run:
+## Main Features
 
-### `npm start`
+- D3 treemap navigation with zoom transitions
+- React portals for rendering components inside selected treemap nodes
+- Three.js and React Three Fiber scenes
+- Mosaic art gallery loaded from local image assets
+- Blog post component for project writeups
+- Portfolio branding in the browser title manifest and favicon
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- `../backend/flask_app.py` serves the built React app and handles form email
+- `../backend/requirements.txt` pins the Python dependencies used in production
+- `src/Treemap.js` builds the treemap layout and handles zoom behavior
+- `src/utilities/treedata.js` defines the portfolio sections and child nodes
+- `src/utilities/StateManagment.js` maps selected nodes to React portals
+- `src/Components/CoverPage` renders the DataFluent landing text
+- `src/Components/AboutPage` renders the tools and skills Three.js scene
+- `src/Components/ProjectsPage` contains project specific pages
+- `src/Components/Blog` contains blog posts
+- `src/Components/ArtGallery` renders artwork from `src/assets/art-gallery`
 
-### `npm test`
+## Run Locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install frontend dependencies from the `frontend` directory.
 
-### `npm run build`
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Start the development server.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Open `http://localhost:3000`.
 
-### `npm run eject`
+To run the backend locally, create a virtualenv from the `backend` directory and
+install the pinned requirements.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+cd ../backend
+python -m venv .venv
+.\.venv\Scripts\activate
+python -m pip install --upgrade pip setuptools wheel
+pip install -r requirements.txt
+python flask_app.py
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Copy `backend/.env.example` to `backend/.env` and fill in the mail settings
+before testing contact form delivery.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Build
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Create a local production build in `frontend/build`.
 
-## Learn More
+```bash
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Create a production build and copy it into `backend/build` for Flask to serve.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run build:backend
+```
 
-### Code Splitting
+The `build:backend` script uses `scripts/sync-build-to-backend.js`, so it works
+without a machine-specific absolute path.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## PythonAnywhere Deployment
 
-### Analyzing the Bundle Size
+PythonAnywhere is retiring the `glastonbury` system image on May 26, 2026. This
+project has been smoke-tested locally on Python 3.13 with the pinned backend
+dependencies in `backend/requirements.txt`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Recommended migration path:
 
-### Making a Progressive Web App
+1. Switch the account system image to `innit` from the PythonAnywhere Account
+   page.
+2. Start a new Bash console so it picks up the new image.
+3. Clear cached wheels before rebuilding the virtualenv.
+4. Rebuild the web app virtualenv with Python 3.13, or another Python 3.10+
+   version available on `innit`.
+5. Reload the web app from the Web tab.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Example commands on PythonAnywhere:
 
-### Advanced Configuration
+```bash
+cd /home/juicyjames/path-to-project/backend
+rm -rf ~/.cache/pip ~/.cache
+python3.13 -m venv ~/.virtualenvs/portfolio
+source ~/.virtualenvs/portfolio/bin/activate
+python -m pip install --upgrade pip setuptools wheel
+pip install -r requirements.txt
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+In the Web tab, set the virtualenv path to
+`/home/juicyjames/.virtualenvs/portfolio`. The WSGI file should import the Flask
+app from the backend directory:
 
-### Deployment
+```python
+import sys
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+path = '/home/juicyjames/path-to-project/backend'
+if path not in sys.path:
+    sys.path.append(path)
 
-### `npm run build` fails to minify
+from flask_app import app as application
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+After reloading, verify the homepage, client-side routes, and contact forms.
+
+## Assets
+
+Public images live in `public/images`.
+
+Art gallery images live in `src/assets/art-gallery`. Add image files there and
+the gallery imports them automatically.
+
+Models used by Three.js components live in `public/models`.
