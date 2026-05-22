@@ -1,27 +1,6 @@
 import React, { useMemo, useState } from "react";
+import { loadArtwork } from "../../utilities/artwork";
 import "./ArtGallery.css";
-
-function loadArtwork() {
-  const context = require.context(
-    "../../assets/art-gallery",
-    false,
-    /\.(png|jpe?g|webp|gif|avif)$/i
-  );
-
-  return context.keys().map((path) => {
-    const fileName = path.replace("./", "");
-    const title = fileName
-      .replace(/\.[^/.]+$/, "")
-      .replace(/[-_]+/g, " ")
-      .replace(/\b\w/g, (character) => character.toUpperCase());
-
-    return {
-      src: context(path),
-      fileName,
-      title,
-    };
-  });
-}
 
 function ArtGallery() {
   const artwork = useMemo(() => loadArtwork(), []);
@@ -30,7 +9,7 @@ function ArtGallery() {
   return (
     <section className="art-gallery" aria-label="Art gallery">
       <div className="art-gallery__header">
-        <p className="art-gallery__kicker">Artwork</p>
+        
         <h1>Art Gallery</h1>
       </div>
 

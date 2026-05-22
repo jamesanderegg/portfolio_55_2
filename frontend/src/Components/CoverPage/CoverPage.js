@@ -19,7 +19,7 @@ function CoverPage() {
       <div className="cover-page__sentence" aria-hidden="true">
         <Sentence
           sentences={sentences}
-          color="#E4BB41"
+          color="#CEAF6D"
           startDelay={500}
           typingSpeed={90}
           maxFontSize={20}

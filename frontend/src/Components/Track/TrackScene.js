@@ -19,7 +19,7 @@ const TrackScene = ({ cameraPosition = [0, 70, 60], cameraLookAt = [0, 0, 0] }) 
         shadows 
         fog={{ color: 'grey', near: 10, far: 50 }}
       >
-        <color attach="background" args={["#06040d"]} />
+        <color attach="background" args={["#463D3E"]} />
         <Camera position={cameraPosition} lookAt={cameraLookAt} />
         <Lights />
         <Physics gravity={[0, -9.81, 0]} solverIterations={20}>

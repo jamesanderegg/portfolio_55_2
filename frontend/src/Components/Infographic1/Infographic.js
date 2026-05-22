@@ -52,7 +52,7 @@ const Infographic = ({ cameraPosition = [0, 8, 170], cameraLookAt = [0, -5, 0] }
         shadows
         fog={{ color: 'grey', near: 10, far: 50 }}
       >
-        <color attach="background" args={["#06040d"]} />
+        <color attach="background" args={["#463D3E"]} />
         <Camera position={cameraPosition} lookAt={cameraLookAt} />
         <Lights />
         <Physics>
@@ -60,7 +60,7 @@ const Infographic = ({ cameraPosition = [0, 8, 170], cameraLookAt = [0, -5, 0] }
         <Plane position={[0, 23, 0]} size={[500, 300]} rotation={[0, 0, 0]} />
           
           
-          <Text3D text="TOOLS & SKILLS" position={[0, 60, .01]} rotation={[0, 0, 0]} size={6.5} color="#b0b3b8" />
+          <Text3D text="TOOLS & SKILLS" position={[0, 60, .01]} rotation={[0, 0, 0]} size={6.5} color="#CEAF6D" />
 
           <GearModelHat ref={gear3Ref} position={[18, 47, 5]} scale={[0.25, 0.25, 0.25]} velocity={1} rotation={[Math.PI / 2, 0, 0]} collisionGroups={[GEAR3_GROUP, NONE_GROUP]} />
           <GearModel ref={gear2Ref} position={[26, 39, 5]} scale={[.5, .5, .5]} velocity={-.5} rotation={[Math.PI / 2, 0.175, 0]} collisionGroups={[GEAR2_GROUP, NONE_GROUP]} />

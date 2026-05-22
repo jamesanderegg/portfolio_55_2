@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   easeCubicOut,
   hierarchy,
@@ -11,29 +11,32 @@ import {
 } from "d3";
 import "./styles/Zoom.css";
 
+import { loadArtwork, pickRandomArtwork } from "./utilities/artwork";
 import StateManagment from "./utilities/StateManagment";
 import SecretPage from "./Components/SecretPage/SecretPage";
 
 const embeddedContentHostIds = new Set([
   "about",
   "nightSkiProject",
+  "playgroundProjects",
   "artGallery",
   "blogPosts",
+  "webApplicationProjects",
   "datafluentContactForm",
   "aboutContactForm",
 ]);
 
 const treemapPalette = [
-  "#8E897D",
-  "#D5CFC0",
-  "#252021",
-  "#BDA877",
-  "#4C4940",
-  "#7B4D3B",
-  "#5F6081",
-  "#AC473D",
-  "#E4BB41",
-  "#C95E2D",
+  "#8E785B",
+  "#463D3E",
+  "#B8A78D",
+  "#AC653A",
+  "#864D45",
+  "#CEAF6D",
+  "#33517F",
+  "#D59A31",
+  "#6A6C78",
+  "#C73B1E",
 ];
 
 const getHashSlug = (value) =>
@@ -157,6 +160,7 @@ function TreeMap({ treeMapData }) {
   const [clickData, setClickData] = useState(null);
   const [isSecretPage, setIsSecretPage] = useState(false);
   const [announcement, setAnnouncement] = useState("");
+  const artworkPreviews = useMemo(() => pickRandomArtwork(loadArtwork(), 3), []);
   const zoomRef = useRef(null);
   const ref = useRef();
   const rootNodeRef = useRef(null);
@@ -292,6 +296,15 @@ function TreeMap({ treeMapData }) {
       const prefersReducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
       ).matches;
+      const getNavigationParent = (node) => {
+        const immediateParent = node?.parent || nodes;
+
+        if (immediateParent?.data?.id === "playgroundProjects") {
+          return immediateParent.parent || nodes;
+        }
+
+        return immediateParent;
+      };
 
       treemap(nodes);
 
@@ -304,7 +317,10 @@ function TreeMap({ treeMapData }) {
         .enter()
         .append("div")
         .attr("class", function (d) {
-          return "node level-" + d.depth + (d.data.thumbnail ? " project-preview-node" : "");
+          return "node level-"
+            + d.depth
+            + (d.data.thumbnail ? " project-preview-node" : "")
+            + (!hasNodeActionTarget(d) ? " no-action-node" : "");
         })
         .attr("title", function (d) {
           return d.data.name ? d.data.name : "null";
@@ -316,6 +332,10 @@ function TreeMap({ treeMapData }) {
           return getNodeKey(d);
         })
         .attr("role", function (d) {
+          if (!hasNodeActionTarget(d)) {
+            return null;
+          }
+
           return isEmbeddedContentHost(d) ? "region" : "button";
         })
         .attr("tabindex", "-1")
@@ -367,6 +387,10 @@ function TreeMap({ treeMapData }) {
         }
 
         if (!d.children) {
+          if (!hasNodeActionTarget(d)) {
+            return null;
+          }
+
           selectedNodeKeyRef.current = getNodeKey(d);
           zoomNodeKeyRef.current = getNodeKey(d.parent || nodes);
           setClickData(d);
@@ -479,6 +503,24 @@ function TreeMap({ treeMapData }) {
           return d.children ? "Open section" : "Open project";
         });
 
+      const artPreviewStrip = projectCardInfo.filter(function (d) {
+        return d.data.id === "galleryMap" && artworkPreviews.length > 0;
+      }).append("div")
+        .attr("class", "art-preview-strip")
+        .attr("aria-label", "Artwork preview");
+
+      artPreviewStrip.selectAll("img")
+        .data(artworkPreviews)
+        .enter()
+        .append("img")
+        .attr("class", "art-preview-thumb")
+        .attr("src", function (piece) {
+          return piece.src;
+        })
+        .attr("alt", function (piece) {
+          return piece.title;
+        });
+
       projectCardBody.filter(function (d) {
         return d.data.id === "datafluent";
       }).append("div")
@@ -544,12 +586,13 @@ function TreeMap({ treeMapData }) {
 
         currentDepth = d.depth;
         currentZoomNode = d;
-        parent.datum(d.parent || nodes);
+        const navigationParent = getNavigationParent(d);
+        parent.datum(navigationParent);
         parent.attr(
           "aria-label",
           d.depth === 0
             ? "Open secret portfolio page"
-            : `Move up to ${(d.parent || nodes).data.name || "parent section"}`
+            : `Move up to ${navigationParent.data.name || "parent section"}`
         );
 
         x.domain([d.x0, d.x1]);
@@ -584,7 +627,11 @@ function TreeMap({ treeMapData }) {
             return select(this).classed("hide") ? "true" : "false";
           })
           .attr("tabindex", function (node) {
-            if (select(this).classed("hide") || isEmbeddedContentHost(node)) {
+            if (
+              select(this).classed("hide") ||
+              isEmbeddedContentHost(node) ||
+              !hasNodeActionTarget(node)
+            ) {
               return "-1";
             }
 
@@ -724,7 +771,7 @@ function TreeMap({ treeMapData }) {
       }
       treemapState?.cleanup();
     };
-  }, [treeMapData, openSecretPage]);
+  }, [treeMapData, openSecretPage, artworkPreviews]);
   
   const handleZoomClick = () => {
     if (rootNodeRef.current && zoomRef.current) {

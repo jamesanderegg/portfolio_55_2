@@ -11,7 +11,7 @@ const Plane = ({ position = [0, 0, 0], size = [70, 100] }) => {
     <RigidBody type="fixed" position={position}>
       <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={size} />
-        <meshStandardMaterial color="#2e2e2e" />
+        <meshStandardMaterial color="#463D3E" />
       </mesh>
     </RigidBody>
   );

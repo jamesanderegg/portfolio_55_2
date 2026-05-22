@@ -5,8 +5,8 @@
   height: 100%;
   overflow-y: auto;
   padding: clamp(64px, 7vw, 92px) clamp(18px, 5vw, 72px) 52px;
-  background: #252021;
-  color: #d5cfc0;
+  background: #463D3E;
+  color: #B8A78D;
   cursor: default;
 }
 
@@ -17,7 +17,7 @@
 
 .blog-page__eyebrow {
   margin: 0 0 14px;
-  color: #e4bb41;
+  color: #CEAF6D;
   font-size: 0.84rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -26,7 +26,7 @@
 
 .blog-page h1 {
   margin: 0 0 28px;
-  color: #e4bb41;
+  color: #CEAF6D;
   font-size: clamp(2rem, 5vw, 4.25rem);
   line-height: 1;
   letter-spacing: 0;
@@ -54,7 +54,7 @@
 }
 
 .blog-page__post-rank {
-  color: rgba(213, 207, 192, 0.52);
+  color: rgba(184, 167, 141, 0.52);
   font-size: 0.86rem;
   line-height: 1.35;
   text-align: right;
@@ -77,7 +77,7 @@
   padding: 0;
   border: 0;
   background: none;
-  color: #d5cfc0;
+  color: #B8A78D;
   font: inherit;
   font-size: clamp(0.92rem, 1.2vw, 1rem);
   font-weight: 700;
@@ -88,12 +88,12 @@
 
 .blog-page__post-link:hover,
 .blog-page__post-link:focus-visible {
-  color: #e4bb41;
+  color: #CEAF6D;
   outline: none;
 }
 
 .blog-page__date {
-  color: rgba(213, 207, 192, 0.68);
+  color: rgba(184, 167, 141, 0.68);
   font-size: 0.9rem;
   font-weight: 700;
 }
@@ -104,7 +104,7 @@
 
 .blog-page__post-meta {
   flex: 0 0 auto;
-  color: rgba(213, 207, 192, 0.58);
+  color: rgba(184, 167, 141, 0.58);
   font-size: 0.76rem;
   line-height: 1.35;
   text-align: right;
@@ -113,7 +113,7 @@
 
 .blog-page__post-summary {
   margin: 2px 0 0;
-  color: rgba(213, 207, 192, 0.7);
+  color: rgba(184, 167, 141, 0.7);
   font-size: 0.82rem;
   line-height: 1.35;
 }
@@ -121,10 +121,10 @@
 .blog-page__back {
   margin: 0 0 22px;
   padding: 9px 12px;
-  border: 1px solid rgba(228, 187, 65, 0.42);
+  border: 1px solid rgba(206, 175, 109, 0.42);
   border-radius: 6px;
-  background: rgba(37, 32, 33, 0.72);
-  color: #e4bb41;
+  background: rgba(70, 61, 62, 0.72);
+  color: #CEAF6D;
   font: inherit;
   font-size: 0.9rem;
   font-weight: 800;
@@ -133,13 +133,13 @@
 
 .blog-page__back:hover,
 .blog-page__back:focus-visible {
-  background: rgba(76, 73, 64, 0.72);
+  background: rgba(106, 108, 120, 0.72);
   outline: none;
 }
 
 .blog-page h2 {
   margin: 34px 0 12px;
-  color: #bda877;
+  color: #CEAF6D;
   font-size: clamp(1.25rem, 2.4vw, 1.85rem);
   line-height: 1.15;
   letter-spacing: 0;
@@ -147,7 +147,7 @@
 
 .blog-page p {
   margin: 0 0 16px;
-  color: rgba(213, 207, 192, 0.9);
+  color: rgba(184, 167, 141, 0.9);
   font-size: clamp(1rem, 1.45vw, 1.15rem);
   line-height: 1.65;
 }

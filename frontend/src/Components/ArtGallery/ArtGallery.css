@@ -4,8 +4,8 @@
   min-height: 100vh;
   overflow-y: auto;
   padding: clamp(72px, 8vw, 104px) clamp(18px, 5vw, 72px) 48px;
-  background: #f5f7f6;
-  color: #1f2523;
+  background: #B8A78D;
+  color: #463D3E;
   cursor: default;
 }
 
@@ -20,7 +20,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #2f6f68;
+  color: #864D45;
 }
 
 .art-gallery h1 {
@@ -67,7 +67,7 @@
 }
 
 .art-gallery__piece:focus-visible {
-  outline: 3px solid #2f6f68;
+  outline: 3px solid #864D45;
   outline-offset: -3px;
 }
 
@@ -75,8 +75,8 @@
   max-width: 680px;
   margin: 12vh auto 0;
   padding: 28px;
-  border: 1px dashed rgba(31, 37, 35, 0.32);
-  background: rgba(255, 255, 255, 0.62);
+  border: 1px dashed rgba(70, 61, 62, 0.32);
+  background: rgba(206, 175, 109, 0.42);
 }
 
 .art-gallery__empty h2 {
@@ -88,7 +88,7 @@
 
 .art-gallery__empty p {
   margin: 0;
-  color: #4b5550;
+  color: #33517F;
   line-height: 1.5;
 }
 
@@ -99,7 +99,7 @@
   display: grid;
   place-items: center;
   padding: 28px;
-  background: rgba(15, 17, 16, 0.9);
+  background: rgba(70, 61, 62, 0.92);
   cursor: zoom-out;
 }
 
@@ -124,10 +124,10 @@
   z-index: 201;
   width: 42px;
   height: 42px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(184, 167, 141, 0.35);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+  background: rgba(184, 167, 141, 0.12);
+  color: #B8A78D;
   font-size: 1.4rem;
   line-height: 1;
   cursor: pointer;

@@ -26,7 +26,7 @@ const Infographic = ({ cameraPosition = [0, 100, 60], cameraLookAt = [0, 0, 0] }
         shadows 
         fog={{ color: 'grey', near: 10, far: 50 }}
       >
-        <color attach="background" args={["#06040d"]} />
+        <color attach="background" args={["#463D3E"]} />
         <Camera position={cameraPosition} lookAt={cameraLookAt} />
         <Lights />
         <Physics>

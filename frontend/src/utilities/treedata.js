@@ -5,7 +5,7 @@ const pageData = [{
 			"name": "DataFluent LLC",
 			"hash": "datafluent",
 			"id" : "datafluent",
-			"description": "Custom web applications, reporting systems, practical AI tools, and operations platforms for organizations that need their data to actually work.",
+			"description": "Custom web applications, reporting systems, practical AI tools, and operations platforms for organizations that need their data to work.",
 			"component": "CoverPage",
 			"children": [
 				{
@@ -15,36 +15,51 @@ const pageData = [{
 					"actionLabel": "View projects",
 					"children": [
 						{
-							"name": "SNOC",
-							"id": "snocWebsite",
-							"value": 1,
-							"thumbnail": "/images/snoc-website-preview.png",
-							"description": "CMS-powered website built with Sanity.io for The School of the Natural Order - CO Chapter.",
-							"href": "https://snoc.org",
-							"actionLabel": "Visit site"
-						},
-						{
-							"name": "Hexagon Art",
-							"id": "hexagonArtWebsite",
-							"value": 1,
-							"thumbnail": "/images/hexagon-art-website-preview.png",
-							"description": "CMS-powered artist website built with Sanity.io for Jeff Richards and the Hexagonart archive.",
-							"href": "https://www.hexagonart.com/",
-							"actionLabel": "Visit site"
+							"name": "Web Application Projects",
+							"value": 5,
+							"id": "webApplicationProjects",
+							"portal": "WebApplicationsPage",
+							"description": "A list of deployed websites, portals, dashboards, and data systems.",
+							"projects": [
+								{
+									"name": "SNOC",
+									"id": "snocWebsite",
+									"thumbnail": "/images/snoc-website-preview.png",
+									"description": "Public website for The School of the Natural Order - Colorado Chapter, built with a Sanity.io content backend so program staff can maintain pages, events, and organizational content without developer support.",
+									"href": "https://snoc.org",
+									"actionLabel": "Visit site"
+								},
+								{
+									"name": "Hexagon Art",
+									"id": "hexagonArtWebsite",
+									"thumbnail": "/images/hexagon-art-website-preview.png",
+									"description": "Artist portfolio and archive site for Jeff Richards and the Hexagon Art collection. The Sanity.io CMS supports structured artwork records, flexible content updates, and a polished public presentation for a large creative catalog.",
+									"href": "https://www.hexagonart.com/",
+									"actionLabel": "Visit site"
+								},
+								{
+									"name": "Colorado GEAR UP",
+									"id": "coloradoGearUp",
+									"thumbnail": "/images/colorado-gear-up-preview.png",
+									"description": "Student records and services platform for Colorado GEAR UP, used to track participant data, services, schools, and reporting requirements for federal grant operations. The current production system is built in VB.NET, with the next grant cycle being developed in C#.",
+									"href": "https://www.coloradogearup.org/",
+									"actionLabel": "Visit site"
+								}
+							]
 						}
 					]
 				},
 				{
 					"name": "AI, RAG & Workflow Automation",
 					"id": "aiRagWorkflowAutomation",
-					"value": "ai-rag-workflow-automation",
+					"value": 5,
 					"description": "Private document search, local LLM tools, AI-assisted workflows, and automations that reduce repetitive work.",
 					"actionLabel": "View projects"
 				},
 				{
 					"name": "Contact DataFluent",
 					"id": "datafluentContactMap",
-					"color": "#AC473D",
+					"color": "#864D45",
 					"description": "Start a conversation about a website, dashboard, reporting system, AI workflow, or custom operations tool.",
 					"actionLabel": "Open form",
 					"children": [
@@ -67,61 +82,71 @@ const pageData = [{
 				{
 					"name": "My Playground",
 					"id" : "projectsMap",
-					"color": "#BDA877",
+					"color": "#8E785B",
 					"displayText": null,
 					"description": "Experimental builds, interactive scenes, dashboards, and visual prototypes where I test ideas before turning them into polished tools.",
 					"children": [
 						{
-							"name": "Tools & Skills",
-							"displayText": null,
-							"id" : "aboutMap",
-							"component": "About",
-							"thumbnail": "/images/tools-skills-preview.svg",
-							"description": "An interactive Three.js skills scene that presents tools, data concepts, and development experience through animated 3D objects inside the treemap.",
-							"children": [
-								{ "name": "Open Tools & Skills", "value": 1,
-								"id" : "about"
-							 }
-							]
-						},
-						{
-							"name": "Night Ski",
-							"id" : "nightSki",
-							"component": "NightSkiProject",
-							"thumbnail": "/images/night-ski-preview.svg",
-							"description": "A playful Three.js night run with drifting tree shadows, glowing headlamps, and skiers weaving through the snow.",
+							"name": "Playground Projects",
+							"value": 5,
+							"id": "playgroundProjects",
+							"hash": "myplayground",
+							"portal": "PlaygroundPage",
+							"description": "A focused set of interactive experiments and visual prototypes.",
+							"projects": [
+								{
+									"name": "Tools & Skills",
+									"id" : "aboutMap",
+									"thumbnail": "/images/tools-skills-preview.svg",
+									"description": "Interactive Three.js skills scene presenting development tools, data concepts, and technical experience through animated 3D objects inside the portfolio treemap.",
+									"href": "#toolsandskills",
+									"actionLabel": "Open project"
+								},
+								{
+									"name": "Night Ski",
+									"id" : "nightSki",
+									"thumbnail": "/images/night-ski-preview.svg",
+									"description": "A playful Three.js night run with drifting tree shadows, glowing headlamps, and animated skiers moving through a compact winter scene.",
+									"href": "#nightski",
+									"actionLabel": "Open project"
+								}
+							],
 							"children": [
 								{
-									"name": "Night Ski Experience",
-									"value": 1,
-									"id" : "nightSkiProject"
+									"name": "Tools & Skills",
+									"displayText": null,
+									"id" : "aboutMap",
+									"component": "About",
+									"thumbnail": "/images/tools-skills-preview.svg",
+									"description": "An interactive Three.js skills scene that presents tools, data concepts, and development experience through animated 3D objects inside the treemap.",
+									"children": [
+										{ "name": "Open Tools & Skills", "value": 1,
+										"id" : "about"
+									 }
+									]
+								},
+								{
+									"name": "Night Ski",
+									"id" : "nightSki",
+									"component": "NightSkiProject",
+									"thumbnail": "/images/night-ski-preview.svg",
+									"description": "A playful Three.js night run with drifting tree shadows, glowing headlamps, and skiers weaving through the snow.",
+									"children": [
+										{
+											"name": "Night Ski Experience",
+											"value": 1,
+											"id" : "nightSkiProject"
+										}
+									]
 								}
 							]
-						},
-						{
-							"name": "Portfolio Rebuild",
-							"value": 1,
-							"id" : "portfolioRebuild",
-							"description": "A rebuild of the portfolio experience around interactive visual navigation and project-focused pages."
-						},
-						{
-							"name": "Data Dashboard",
-							"value": 1,
-							"id" : "dataDashboard",
-							"description": "Dashboard and reporting experiments for turning raw data into usable views."
-						},
-						{
-							"name": "Visualization Lab",
-							"value": 1,
-							"id" : "visualizationLab",
-							"description": "Explorations in visualizing complex information with web-native interaction."
 						}
 					]
 				},
 				{
 					"name": "Blog",
 					"id" : "blog",
-					"color": "#8E897D",
+					"color": "#33517F",
 					"description": "Notes on software, data systems, creative coding, and lessons from building practical tools for real teams.",
 					"children": [
 						{
@@ -136,7 +161,7 @@ const pageData = [{
 				{
 					"name": "Art Gallery",
 					"id": "galleryMap",
-					"color": "#D5CFC0",
+					"color": "#B8A78D",
 					"description": "A visual archive for sketches, generative pieces, and image experiments that sit outside the main software work.",
 					"children":
 						[
@@ -151,7 +176,7 @@ const pageData = [{
 				{
 					"name": "Contact Me",
 					"id": "contactMap",
-					"color": "#AC473D",
+					"color": "#C73B1E",
 					"description": "The direct line for project conversations, collaboration ideas, data problems, and practical software work.",
 					"actionLabel": "Open form",
 					"children": [

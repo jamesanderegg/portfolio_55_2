@@ -6,7 +6,7 @@
   height: 100%;
   padding: clamp(16px, 3vw, 36px);
   color: var(--palette-linen);
-  background: linear-gradient(135deg, rgba(37, 32, 33, 0.96), rgba(76, 73, 64, 0.88));
+  background: linear-gradient(135deg, rgba(70, 61, 62, 0.96), rgba(51, 81, 127, 0.88));
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   cursor: default;
 }
@@ -35,7 +35,7 @@
 
 .contact-page__copy p:last-child {
   margin: 12px 0 0;
-  color: rgba(213, 207, 192, 0.8);
+  color: rgba(184, 167, 141, 0.8);
   font-size: clamp(13px, 1.5vmin, 17px);
   line-height: 1.4;
 }
@@ -50,7 +50,7 @@
 .contact-page label {
   display: grid;
   gap: 5px;
-  color: rgba(213, 207, 192, 0.84);
+  color: rgba(184, 167, 141, 0.84);
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -61,8 +61,8 @@
   width: 100%;
   min-width: 0;
   color: var(--palette-linen);
-  background: rgba(37, 32, 33, 0.58);
-  border: 1px solid rgba(213, 207, 192, 0.26);
+  background: rgba(70, 61, 62, 0.58);
+  border: 1px solid rgba(184, 167, 141, 0.26);
   border-radius: 6px;
   padding: 10px 11px;
   font: 14px/1.35 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -76,7 +76,7 @@
 
 .contact-page input:focus,
 .contact-page textarea:focus {
-  outline: 2px solid rgba(228, 187, 65, 0.58);
+  outline: 2px solid rgba(206, 175, 109, 0.58);
   outline-offset: 1px;
 }
 
@@ -101,7 +101,7 @@
   padding: 10px 14px;
   color: var(--palette-ink);
   background: var(--palette-gold);
-  border: 1px solid rgba(228, 187, 65, 0.8);
+  border: 1px solid rgba(206, 175, 109, 0.8);
   border-radius: 6px;
   font: 700 13px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   cursor: pointer;
@@ -115,7 +115,7 @@
 .contact-page__feedback {
   min-width: 0;
   margin: 0;
-  color: rgba(213, 207, 192, 0.82);
+  color: rgba(184, 167, 141, 0.82);
   font-size: 13px;
   line-height: 1.3;
 }
@@ -125,7 +125,7 @@
 }
 
 .contact-page__feedback--error {
-  color: #f0a49b;
+  color: #CEAF6D;
 }
 
 @media screen and (max-width: 760px) {

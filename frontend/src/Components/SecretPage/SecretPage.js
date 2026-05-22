@@ -8,12 +8,10 @@ export default function SecretPage({ onExit }) {
         &darr; HOME
       </button>
       <div className="secret-page__content">
-        <p className="secret-page__eyebrow">../portfolio</p>
         <h1>Secret Page</h1>
         <p>
-          You went one directory above DataFluent and About Me. This tucked-away
-          layer is reserved for experiments, hidden notes, and future easter
-          eggs.
+          This is a hidden page for small experiments, notes, and ideas I may
+          build later.
         </p>
       </div>
     </section>

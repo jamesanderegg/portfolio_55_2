@@ -1,7 +1,7 @@
 .section h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #ffbf00;
+    color: #CEAF6D;
   }
   
   .section ul {
@@ -12,9 +12,9 @@
   .section ul li {
     margin: 5px 0;
     padding: 10px;
-    background-color: #0a9396;
+    background-color: #33517F;
     border-radius: 5px;
-    color: #e9d8a6;
+    color: #B8A78D;
     font-size: 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
